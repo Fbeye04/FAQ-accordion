@@ -16,14 +16,12 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div class="bg-pattern">
+    <div class="bg-pattern" aria-hidden="true">
       <picture>
         <source
-          media="(min-width: 1280px)"
-          srcset="./assets/images/background-pattern-desktop.svg" />
-        <img
-          src="./assets/images/background-pattern-mobile.svg"
-          alt="background pattern" />
+          media="(max-width: 768px)"
+          srcset="./assets/images/background-pattern-mobile.svg" />
+        <img src="./assets/images/background-pattern-desktop.svg" alt="" />
       </picture>
     </div>
 
@@ -81,9 +79,7 @@
 
           <li class="accordion-item">
             <details>
-              <summary>
-                How can I get help if I'm stuck on a Frontend Mentor challenge?
-              </summary>
+              <summary>How can I get help if I'm stuck on a challenge?</summary>
               <div class="accordion-content">
                 <p>
                   The best place to get help is inside Frontend Mentor's Discord

@@ -16,7 +16,127 @@ html {
   font-size: 16px;
 }
 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 /* mobile: 375px - 720px */
+body {
+  font-family: "Work Sans", sans-serif;
+  background-color: var(--Purple-100);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.bg-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 25vh;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.bg-pattern img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+main {
+  position: relative;
+  top: 13rem;
+}
+
+.faq-container {
+  background-color: var(--White);
+  display: flex;
+  flex-direction: column;
+  margin: auto 2.5rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  gap: 1rem;
+}
+
+.faq-header {
+  display: flex;
+  gap: 1rem;
+}
+
+.faq-header img {
+  width: 1.5rem;
+}
+
+.faq-header h1 {
+  font-size: 2.5rem;
+  font-weight: var(--fw-bold);
+  color: var(--Purple-950);
+}
+
+.accordion-list {
+  list-style: none;
+}
+
+.accordion-item {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+}
+
+details {
+  width: 100%;
+}
+
+summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  font-weight: var(--fw-semibold);
+  cursor: pointer;
+  list-style: none;
+  padding: 0.5rem 0;
+}
+
+summary:hover {
+  color: rgb(137, 4, 137);
+}
+
+summary:focus {
+  outline: none;
+}
+
+summary:focus-visible {
+  outline: 2px solid var(--purple-600);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+summary::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-image: url("./assets/images/icon-plus.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transition: transform 0.3s ease;
+}
+
+details[open] summary::after {
+  background-image: url("./assets/images/icon-minus.svg");
+}
+
+.accordion-content {
+  color: var(--Purple-600);
+  padding-right: 2rem;
+}
+
 footer {
   font-size: 11px;
   text-align: center;
