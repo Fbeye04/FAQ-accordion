@@ -29,7 +29,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   min-height: 100vh;
+  padding: 1.5rem;
 }
 
 .bg-pattern {
@@ -37,34 +39,36 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 25vh;
+  height: 30vh;
   z-index: -1;
   overflow: hidden;
 }
 
 .bg-pattern img {
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: cover;
 }
 
 main {
-  position: relative;
-  top: 13rem;
+  width: 100%;
+  max-width: 600px; /* limits the maximum width */
+  margin: 2rem auto; /* Automatic margin for centering */
 }
 
 .faq-container {
   background-color: var(--White);
   display: flex;
   flex-direction: column;
-  margin: auto 2.5rem;
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: 1rem;
-  gap: 1rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1);
+  gap: 1.5rem;
 }
 
 .faq-header {
   display: flex;
+  align-items: center;
   gap: 1rem;
 }
 
@@ -73,7 +77,7 @@ main {
 }
 
 .faq-header h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: var(--fw-bold);
   color: var(--Purple-950);
 }
@@ -83,27 +87,32 @@ main {
 }
 
 .accordion-item {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   padding: 1rem 0;
+}
+
+.accordion-item:last-child {
+  border-bottom: none;
 }
 
 details {
   width: 100%;
+  overflow: hidden;
 }
 
 summary {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 2rem;
   font-weight: var(--fw-semibold);
+  color: var(--Purple-950);
   cursor: pointer;
   list-style: none;
   padding: 0.5rem 0;
 }
 
 summary:hover {
-  color: rgb(137, 4, 137);
+  color: var(--Purple-600);
 }
 
 summary:focus {
@@ -111,7 +120,7 @@ summary:focus {
 }
 
 summary:focus-visible {
-  outline: 2px solid var(--purple-600);
+  outline: 2px solid var(--Purple-600);
   outline-offset: 2px;
   border-radius: 4px;
 }
@@ -119,6 +128,7 @@ summary:focus-visible {
 summary::after {
   content: "";
   display: block;
+  flex-shrink: 0;
   width: 30px;
   height: 30px;
   background-image: url("./assets/images/icon-plus.svg");
@@ -135,15 +145,43 @@ details[open] summary::after {
 .accordion-content {
   color: var(--Purple-600);
   padding-right: 2rem;
+  margin-top: 0.5rem;
+  line-height: 1.6;
 }
 
 footer {
-  font-size: 11px;
+  font-size: 0.8rem;
   text-align: center;
+  margin-top: 1.5rem;
 }
 
 footer a {
   color: hsl(228, 45%, 44%);
 }
 
-/* desktop: 1080px */
+/* desktop*/
+@media (min-width: 769px) {
+  .faq-container {
+    padding: 2.5rem;
+  }
+
+  .faq-header img {
+    width: 2rem;
+  }
+
+  .faq-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .accordion-item {
+    padding: 1.25rem 0;
+  }
+
+  summary {
+    font-size: 1.125rem;
+  }
+
+  footer {
+    font-size: 1rem;
+  }
+}
